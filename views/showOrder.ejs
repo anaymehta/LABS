@@ -1,0 +1,54 @@
+<% include partials/header2 %>
+
+<div class="ui main text container segment thumbnail">
+	<div class="ui huge header"><%= order.name %></div>
+	<div class="ui top attached">
+		<div class="item">
+			<div class="row text-center">
+		<% order.equipments.forEach(function(item){ %>
+			<div class="col-lg-4 col-sm-6">
+				<div class="thumbnail">
+					<a href="/eqList/<%= item._id %>">
+					<img src=<%= item.image %>>
+					<div class="caption">
+						<h4><%= item.name %></h4>
+					</div>
+					</a>
+				</div>
+			</div>
+		<% }) %>
+	</div>
+			<div class="description">
+				<p> 
+					<strong>Date: </strong>
+					<%= order.date.toDateString() %>
+					  —  <strong>Period: </strong>
+					<%= order.period %>
+				</p>
+				<p> <%- order.info %></p>
+				<p><em>Created by <%= order.author.username %></em></p>
+			</div>
+			<a class="fluid ui huge green button btn-block" href="/order">Return</a>
+			<% if(currentUser && order.author.id.equals(currentUser._id)){ %>
+			<br>
+			<div class="row">
+				<div class="col-xs-4">
+					<form action="/order/<%= order._id %>/eqList" method="GET">
+						<button class="fluid ui huge blue button btn-block">Add Equipment</button>
+					</form>
+				</div>
+				<div class="col-xs-4">
+					<a class="fluid ui huge orange button" href="/order/<%= order._id %>/edit">Edit</a>
+				</div>
+				<div class="col-xs-4">
+					<form id="delete" action="/order/<%= order._id%>?_method=DELETE" method="POST">
+						<button class="fluid ui huge red button">Delete</button>
+					</form>
+				</div>
+			</div>
+			<% } %>
+		</div>
+	</div>
+</div>
+
+<% include partials/footer%>

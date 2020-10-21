@@ -1,0 +1,26 @@
+<% include partials/header2 %>
+
+<div class="container">
+	<div class="jumbotron" id="jumbo">
+		<h1><i class="fas fa-microscope"></i> Equipment List</h1>
+	</div>
+
+	<div class="row text-center">
+		<% list.forEach(function(item){ %>
+			<div class="col-lg-4 col-sm-6">
+				<div class="thumbnail">
+					<a href="/eqList/<%= item._id %>">
+					<img src=<%= item.image %>>
+					<div class="caption">
+						<h4><%= item.name %></h4>
+					</div>
+					</a>
+				</div>
+			</div>
+		<% }) %>
+	</div>
+	<a class="ui huge secondary button btn-block" href="/eqList/new">Add Equipment</a>
+	<p></p>
+</div>
+
+<%include partials/footer %>

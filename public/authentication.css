@@ -1,0 +1,14 @@
+body {
+	background-image: url(https://images.unsplash.com/photo-1518152006812-edab29b069ac?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ea57442bf3e8f56890337f5accda026b&auto=format&fit=crop&w=1500&q=80) !important;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed !important;
+}
+
+.ui.text.container {
+	max-width: 600px !important;
+}
+
+.field {
+	font-size: 15px;
+}
