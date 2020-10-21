@@ -6,4 +6,4 @@ LABS is a database-driven website that makes equipment cataloguing and laborator
 
 Design & Testing Documentation is provided.
 
-A test version of the website can be found @ [www.gmalabs.herokuapp.com]
+A test version of the website can be found @ www.gmalabs.herokuapp.com
