@@ -1,0 +1,33 @@
+<% include partials/header2 %>
+
+<div class="ui main text container segment thumbnail">
+	<div class="ui huge header"><%= equipment.name %></div>
+	<div class="ui top attached">
+		<div class="item">
+			<img class="ui centered rounded image" src="<%= equipment.image %>">
+			<div class="description">
+				<p> <%- equipment.description %></p>
+			</div>
+			<a class="fluid ui huge green button btn-block" href="back">Return</a>
+			<% if(currentUser && equipment.author.id.equals(currentUser._id)){ %>
+			<br>
+			<div class="row">
+				<div class="col-xs-6">
+					<a class="fluid ui huge orange button" href="/eqList/<%= equipment._id %>/edit">Edit</a>
+				</div>
+				<div class="col-xs-6">
+					<form id="delete" action="/eqList/<%= equipment._id%>?_method=DELETE" method="POST">
+						<button class="fluid ui huge red button">Delete</button>
+					</form>
+				</div>
+			</div>
+			<% } %>
+			<!-- <br> -->
+			<!-- <form action="/eqList/<%= equipment._id %>/book" method="POST">
+				<button class="fluid ui huge blue button btn-block">Book This Item</button>
+			</form> -->
+		</div>
+	</div>
+</div>
+
+<% include partials/footer%>

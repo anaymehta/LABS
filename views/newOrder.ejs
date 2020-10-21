@@ -1,0 +1,35 @@
+<% include partials/header5 %>
+
+<div class="ui main text container segment">
+	<div class="ui huge header">Create New Order</div>
+	<form class="ui form" action="/order" method="POST">
+		<div class="field">
+			<label>Order Name</label>
+			<input type="text" name="order[name]">
+		</div>
+		<div class="field">
+			<label>Date</label>
+			<input type="date" name="order[date]">
+		</div>
+		<div class="field">
+			<label>Period</label>
+			<select name="order[period]">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>ACE 1</option>
+				<option>ACE 2</option>
+			</select>
+		</div>
+		<div class="field">
+			<label>Additional Information</label>
+			<textarea name="order[info]"></textarea>
+		</div>
+		<input id="submit" class="ui huge orange basic button btn-block" type="submit">
+	</form>
+</div>
+
+<% include partials/footer%>

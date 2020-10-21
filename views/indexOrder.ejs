@@ -1,0 +1,25 @@
+<% include partials/header2 %>
+
+<div class="container">
+	<div class="jumbotron" id="jumbo">
+		<h1><i class="fas fa-microscope"></i> Equipment List</h1>
+	</div>
+
+	<div class="row text-center">
+		<% list.forEach(function(item){ %>
+			<div class="col-lg-4 col-sm-6">
+				<div class="thumbnail">
+					<a href="/eqList/<%= item._id %>">
+					<img src=<%= item.image %>>
+					</a>
+					<form action="/order/<%= id %>/eqList/<%= item._id %>" method="POST">
+						<input type="submit" class="fluid ui huge blue button btn-block" value="Add <%= item.name %>">
+					</form>
+				</div>
+			</div>
+		<% }) %>
+	</div>
+	<a href="/order/<%= id %>" class="ui huge secondary button btn-block">Return To Order</a>
+</div>
+
+<%include partials/footer %>
